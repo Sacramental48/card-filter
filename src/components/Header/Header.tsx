@@ -2,8 +2,8 @@ import { Search, Analytics } from './svg';
 import { useState } from 'react';
 
 const Header = () => {
-    const [searchColor, setSearchColor] = useState('');
-    const [analyticsColor, setAnalyticsColor] = useState('');
+    const [searchColor, setSearchColor] = useState<string>('');
+    const [analyticsColor, setAnalyticsColor] = useState<string>('');
 
 
     return (
@@ -28,7 +28,7 @@ const Header = () => {
                         <p className='hidden xs:block'>Analytics</p>
                     </button>
                 </div>
-                <img src="/img/ProfileImage.png" alt="Profile image" />
+                <img src="/img/ProfileImage.png" alt="Profile image" className='w-[40px] h-[40px]' />
             </div>
         </header>
     )
