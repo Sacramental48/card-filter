@@ -4,7 +4,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+    .range-input {
+        @apply bg-dim-inpBcgDropDown text-dim-textPrimary rounded-lg max-w-[122px] h-10 pl-8;
+    }
+}
+
+@layer components {
+    .transition-slide {
+        transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    .transition-slide.visible {
+        max-height: 100%;
+        opacity: 1;
+    }
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     background-color: #F5F7FB;
+    user-select: none
+}
+
+input {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

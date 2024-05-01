@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import Header from '../components/Header/Header';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import Main from '../components/Main';
 
 const Layout = () => {
     const navigate = useNavigate();
@@ -13,8 +14,9 @@ const Layout = () => {
     }, []);
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col gap-4 h-screen">
             <Header />
+            <Main />
         </div>
     );
 };
