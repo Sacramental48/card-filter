@@ -7,7 +7,6 @@ type Salary = {
 }
 
 const RangeSalary = () => {
-    const [toggleArrow, setToggleArrow] = useState<boolean>(false);
     const [salary, setSalary] = useState<Salary>({
         firstCount: null,
         secondCount: null
@@ -18,32 +17,21 @@ const RangeSalary = () => {
     };
 
     return (
-        <Accordion toggleValue={toggleArrow}
-            visiblePart={
-                <div className="flex justify-between cursor-pointer mb-3" onClick={() => setToggleArrow(!toggleArrow)}>
-                    <h2>Range salary</h2>
-                    {toggleArrow 
-                        ? 
-                        <img src="/img/svg/arrow-up.svg" alt="arrow-up" /> 
-                        :
-                        <img src="/img/svg/arrow-down.svg" alt="arrow-down" />
-                    }
+        <Accordion 
+        title={'Range salary'}
+        >
+            <div className="flex gap-2 items-center mt-3">
+                <div className="flex relative">
+                    <input type="number" value={salary.firstCount || ''} onChange={handleCountChange('firstCount')} className="range-input" />
+                    <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
                 </div>
-            }
-            hiddenPart={
-                <div className="flex gap-2 items-center">
-                    <div className="flex relative">
-                        <input type="number" value={salary.firstCount || ''} onChange={handleCountChange('firstCount')} className="range-input" />
-                        <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
-                    </div>
-                    <span>-</span>
-                    <div className="flex relative">
-                        <input type="number" value={salary.secondCount || ''} onChange={handleCountChange('secondCount')} className="range-input" />
-                        <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
-                    </div>
+                <span>-</span>
+                <div className="flex relative">
+                    <input type="number" value={salary.secondCount || ''} onChange={handleCountChange('secondCount')} className="range-input" />
+                    <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
                 </div>
-            }
-        />
+            </div>
+        </Accordion>
     );
 };
 

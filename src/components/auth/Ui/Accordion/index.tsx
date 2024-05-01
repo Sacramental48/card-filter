@@ -1,18 +1,28 @@
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 
 interface Props {
-    visiblePart: ReactNode,
-    hiddenPart: ReactNode,
-    toggleValue: boolean
+    title: string,
+    children: ReactNode
 }
 
-const Accordion = ({visiblePart, hiddenPart, toggleValue }: Props) => {
+const Accordion = ({ title, children }: Props) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (contentRef.current) {
+            contentRef.current.style.maxHeight = isOpen ? `${contentRef.current.scrollHeight}px` : '0';
+        }
+    }, [isOpen]);
 
     return (
         <section>
-            {visiblePart}
-            <div className={`transition-slide ${toggleValue ? 'visible' : ''}`}>
-                {hiddenPart}
+            <div className="flex justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                <h2>{title}</h2>
+                    <img src={`/img/svg/arrow-${isOpen ? 'up' : 'down'}.svg`} alt="arrow-up" /> 
+            </div>
+            <div className={`accordion-section`} ref={contentRef}>
+                {children}
             </div>
         </section>
     )

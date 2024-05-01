@@ -1,4 +1,5 @@
 import RangeSalary from "./RangeSalary";
+import CompanySize from "./CompanySize";
 
 const Aside = () => {
     return (
@@ -9,6 +10,7 @@ const Aside = () => {
                     <button className="text-sm cursor-pointer text-dim-bluePrimary">Clear all</button>
                 </section>
                 <RangeSalary />
+                <CompanySize />
             </div>
         </aside>
     )
