@@ -16,7 +16,7 @@ const Accordion = ({ title, children }: Props) => {
     }, [isOpen]);
 
     return (
-        <>
+        <section>
             <div className="flex justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <h2>{title}</h2>
                     <img src={`/img/svg/arrow-${isOpen ? 'up' : 'down'}.svg`} alt="arrow-up" /> 
@@ -28,7 +28,7 @@ const Accordion = ({ title, children }: Props) => {
                 </div>
 
             }
-        </>
+        </section>
     )
 }
 

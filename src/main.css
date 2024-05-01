@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .range-input {
+        @apply bg-dim-inpBcgDropDown text-dim-textPrimary rounded-lg max-w-[122px] h-10 pl-8;
+    }
+
+    .accordion-section {
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        max-height: 0;
+    }
+
+    .checkbox-block {
+        display: flex;
+        background-color: #fff;
+    }
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #F5F7FB;
+    user-select: none
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: "\2714";
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #2A85FF;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 12px;
+    line-height: 14px;
+    color: #2A85FF;
+    text-align: center;
+}
+
+input[type="checkbox"] + label::before {
+    content: "\2714";
+    display: inline-block;
+    margin-right: 8px;
+    gap: 8px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    color: transparent;
+    text-align: center;
+}
+
+.checkbox-block input[type="checkbox"]:checked + label {
+    color: #101016;
+}
+
+.checkbox-block input[type="checkbox"] + label {
+    color: #636B74;
+}
+
+label {
+    cursor: pointer;
+}
