@@ -20,7 +20,7 @@ const RangeSalary = () => {
         <Accordion 
         title={'Range salary'}
         >
-            <div className="flex gap-2 items-center mt-3">
+            <div className="flex gap-2 items-center">
                 <div className="flex relative">
                     <input type="number" value={salary.firstCount || ''} onChange={handleCountChange('firstCount')} className="range-input" />
                     <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
