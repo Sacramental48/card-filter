@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Accordion from "@/components/auth/Ui/Accordion";
+import Accordion from "@/components/Ui/Accordion";
 
 type Salary = {
     firstCount: number | null,

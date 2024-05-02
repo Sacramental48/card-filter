@@ -4,7 +4,7 @@ import Content from './Content';
 
 const Main = () => {
     return (
-        <main className='flex px-[40px] gap-[20px] h-screen'>
+        <main className='flex px-[40px] gap-[20px] '>
             <Aside />
             <Content />
         </main>
