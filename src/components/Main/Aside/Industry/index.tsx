@@ -1,61 +1,70 @@
 import Accordion from "@/components/Ui/Accordion";
-import { useState } from 'react'
-type IndustryType  = {
+import { useState } from 'react';
+
+type IndustryType = {
     name: string,
-    checked?: boolean,
+    checked: boolean,
 }
 
 const Industry = () => {
     const industryData: IndustryType[] = [
-        {name: 'All industries'},
-        {name: 'Agriculture'},
-        {name: 'Arts, Entertainment'},
-        {name: 'Biotech & Pharmaceuticals'},
-        {name: 'Construction'},
-        {name: 'Cyber Security'},
-        {name: 'E-Commerce'},
-        {name: 'EdTech'},
-        {name: 'Fintech'},
-        {name: 'Healthcare'},
-        {name: 'Human Resources & Staffing'},
-        {name: 'Information Technology'},
-        {name: 'Insurance'},
-        {name: 'Marketing & PR'},
-        {name: 'Media & Communication'},
-        {name: 'Real Estate'},
-        {name: 'Retail & Wholesale'},
-        {name: 'Telecommunications'},
-        {name: 'Transportation &Logistics'},
+        {name: 'All industries', checked: false},
+        {name: 'Agriculture', checked: false},
+        {name: 'Arts, Entertainment', checked: false},
+        {name: 'Biotech & Pharmaceuticals', checked: false},
+        {name: 'Construction', checked: false},
+        {name: 'Cyber Security', checked: false},
+        {name: 'E-Commerce', checked: false},
+        {name: 'EdTech', checked: false},
+        {name: 'Fintech', checked: false},
+        {name: 'Healthcare', checked: false},
+        {name: 'Human Resources & Staffing', checked: false},
+        {name: 'Information Technology', checked: false},
+        {name: 'Insurance', checked: false},
+        {name: 'Marketing & PR', checked: false},
+        {name: 'Media & Communication', checked: false},
+        {name: 'Real Estate', checked: false},
+        {name: 'Retail & Wholesale', checked: false},
+        {name: 'Telecommunications', checked: false},
+        {name: 'Transportation &Logistics', checked: false},
     ];
 
     const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-    
+
     const handleCheckboxChange = (name: string) => {
-        setCheckedItems(prevState => ({
-            ...prevState,
-            [name]: !prevState[name]
-        }));
+        if (name === 'All industries') {
+            const allChecked = !checkedItems['All industries'];
+            const newCheckedItems: Record<string, boolean> = {};
+            industryData.forEach((field) => {
+                newCheckedItems[field.name] = allChecked;
+            });
+            setCheckedItems(newCheckedItems);
+        } else {
+            setCheckedItems(prevState => ({
+                ...prevState,
+                [name]: !prevState[name]
+            }));
+        }
     }
 
     return (
         <Accordion
-        title={'Industry'} 
+            title={'Industry'}
         >
             <div className="flex flex-col gap-3">
-            {industryData.map((field, index) => (
-                <div className="checkbox-block" key={index}>
-                    <input
-                        type="checkbox"
-                        id={field.name}
-                        checked={checkedItems[field.name] || false}
-                        onChange={() => handleCheckboxChange(field.name)}
-                    />
-                    <label htmlFor={field.name}>{field.name}</label>
-                </div>
-            ))}
-        </div>
+                {industryData.map((field, index) => (
+                    <div className="checkbox-block" key={index}>
+                        <input
+                            type="checkbox"
+                            id={field.name}
+                            checked={checkedItems[field.name] || false}
+                            onChange={() => handleCheckboxChange(field.name)}
+                        />
+                        <label htmlFor={field.name}>{field.name}</label>
+                    </div>
+                ))}
+            </div>
         </Accordion>
-        
     );
 }
 

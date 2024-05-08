@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
     .range-input {
         @apply bg-dim-inpBcgDropDown text-dim-textPrimary rounded-lg max-w-[122px] h-10 pl-8;
@@ -20,6 +19,20 @@
         display: flex;
         background-color: #fff;
     }
+
+    .card-label {
+        background-color: #F5F7FB;
+        color: #2A85FF;
+        border-radius: 4px;
+        padding: 2px 10px;
+        font-weight: 300;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {

@@ -14,7 +14,7 @@ const CheckboxStar = ({id, checked, onChange}: CheckboxProps): JSX.Element => {
             <label htmlFor={`star-${id}`} className="flex">
                 {[...Array(5)].map((_, index) => (
                     <span key={index}>
-                        <img src={`/img/svg/${id < 6 - index ? 'fill-star' : 'star'}.svg`} alt="" />
+                        <img src={`/img/svg/${id < 6 - index ? 'fill-star' : 'star'}.svg`} alt={`${id < 6 - index ? 'fill-star' : 'star'}`} />
                     </span>
                 ))}
             </label>

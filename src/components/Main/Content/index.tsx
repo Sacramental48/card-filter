@@ -1,7 +1,9 @@
+import ContentCards from "./Cards";
+
 const Content = () => {
     return (
-        <section className="grid col-span-3">
-            Content
+        <section className="w-full">
+            <ContentCards />
         </section>
     )
 }
