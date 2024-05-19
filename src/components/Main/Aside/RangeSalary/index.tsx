@@ -20,12 +20,12 @@ const RangeSalary = () => {
         <Accordion 
         title={'Range salary'}
         >
-            <div className="flex gap-2 items-center">
+            <div className="flex lg:items-center flex-wrap lg:flex-nowrap gap-2">
                 <div className="flex relative">
                     <input type="number" value={salary.firstCount || ''} onChange={handleCountChange('firstCount')} className="range-input" />
                     <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />
                 </div>
-                <span>-</span>
+                <span className="lg:inline hidden">-</span>
                 <div className="flex relative">
                     <input type="number" value={salary.secondCount || ''} onChange={handleCountChange('secondCount')} className="range-input" />
                     <img className="absolute top-[13px] left-3" src="/img/svg/dollar.svg" alt="dollar" />

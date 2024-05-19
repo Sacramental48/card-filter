@@ -40,7 +40,7 @@ const Cards = () => {
     const currentItem = data.slice(indexOfFirstPage, indexOfLastPage);
 
     return (
-        <div>
+        <>
             <ContentCards data={currentItem} />
             <Pagination 
                 itemsPerPage={itemsPerPage}
@@ -48,7 +48,7 @@ const Cards = () => {
                 paginate={paginate}
                 currentPage={currentPage}
             />
-        </div>
+        </>
         
     )
 }

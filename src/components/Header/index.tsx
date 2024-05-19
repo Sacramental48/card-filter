@@ -7,7 +7,7 @@ const Header = () => {
 
 
     return (
-        <header className='flex justify-between items-center min-h-[60px] sm:px-[40px] px-[20px] bg-dim-white'>
+        <header className='flex justify-between items-center min-h-[60px] md:px-[40px] px-[20px] bg-dim-white'>
             <div className='flex justify-between items-center h-[40px] w-full'>
                 <h1 className='text-[29px] text-dim-bluePrimary hidden sm:block'>Jobs</h1>
                 <div className='flex sm:gap-4 gap-0'>

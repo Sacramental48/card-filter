@@ -8,22 +8,29 @@ const ContentCards = ({ data }: {data: Vacancy[]}) => {
     };
 
     return (
-        <div className="flex justify-start flex-wrap gap-[10px]">
+        <div className="grid grid-cols-6 gap-[10px]">
             {data.map((item, index) => (
-                <article className="flex flex-col justify-between bg-dim-white cursor-pointer rounded-xl max-w-[340px] w-full p-4" key={index}>
+                <article className="sm:col-span-2 xs:col-span-3 col-span-6 bg-dim-white cursor-pointer rounded-xl w-full p-4" key={index}>
                     <div className="mb-3">
                         <h2 className="text-dim-textPrimary font-semibold leading-5 mb-2 max-w-full overflow-hidden whitespace-nowrap text-ellipsis">{item.job_title}</h2>
                         <h4 className="text-sm max-w-full overflow-hidden leading-[18px] mb-[4px] whitespace-nowrap text-ellipsis">{item.company_name}</h4>
-                        <p className="text-sm text-dim-textSecondary leading-[18px] mb-3">{item.company_location}</p>
+                        {item.company_location 
+                        ? 
+                            <p className="text-sm text-dim-textSecondary leading-[18px] mb-3">{item.company_location}</p> 
+                        :
+                            <p className='text-sm text-dim-textSecondary leading-[18px] mb-3'>...</p>
+                        }
                         <div className="flex flex-wrap gap-2">
                             <span className="card-label">{item.site_parsed}</span>
                         </div>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between flex-col lg:flex-row">
                         <div className="flex items-center gap-1">
-                            {item.job_salary_per_hour ? 
-                            <span className="text-dim-bluePrimary leading-5 font-semibold">${item.job_salary_per_hour}</span>
-                            : <span className="text-dim-bluePrimary leading-5 font-semibold">$...</span>
+                            {item.job_salary_per_hour 
+                            ? 
+                                <span className="text-dim-bluePrimary leading-5 font-semibold">${item.job_salary_per_hour}</span>
+                            : 
+                                <span className="text-dim-bluePrimary leading-5 font-semibold">$...</span>
                             }
                             <span className="text-dim-textSecondary leading-5">/hour</span>
                         </div>

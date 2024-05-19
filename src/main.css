@@ -58,32 +58,32 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + label::before {
-    content: "\2714";
+    content: url('./components/Public/check.svg');
     display: inline-block;
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
+    margin-right: 6px;
+    width: 17px;
+    height: 17px;
     border: 2px solid #2A85FF;
     border-radius: 4px;
     background-color: white;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 15px;
+    line-height: 17px;
     color: #2A85FF;
     text-align: center;
 }
 
 input[type="checkbox"] + label::before {
-    content: "\2714";
+    content: '';
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 6px;
     gap: 8px;
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 15px;
+    line-height: 17px;
     color: transparent;
     text-align: center;
 }

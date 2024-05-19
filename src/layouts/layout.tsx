@@ -14,7 +14,7 @@ const Layout = () => {
     }, []);
 
     return (
-        <div className="flex flex-col gap-4 h-screen">
+        <div className="flex flex-col gap-4 h-fit">
             <Header />
             <Main />
         </div>
