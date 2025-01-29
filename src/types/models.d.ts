@@ -24,4 +24,8 @@ export type Vacancy = {
     site_parsed: string
     _id: string
 }
-  
+
+export type JobItems = {
+    count: number
+    vacancies: Array
+}
